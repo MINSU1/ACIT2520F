@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- is it okay to have differnet title with the html file name? -->
+        <title>Summary</title>
+        <link href="weather.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <img id="background" src="./img/background.jpg">
+        <div id="top_padding"></div>
+        <div id="logo"></div>
+        <div id='display'>
+            <div id="h1">Summary</div>
+            <div id="main_info">
+                <p1 class="sum_text">Delivery Fee:</p1>
+                <p2 class="sum_text">$5</p2>
+                <br>
+                <p3 class="sum_text">Extra Distance Fee: ${{{dist_fee}}}     ({{{dist}}})</p3>
+                <br>
+                <p5 id='p5' class="sum_text">Extra Weather Fee:  $</p5><p6 id="p6" class="sum_text"></p6><br>
+                <p7 class="sum_text">Restaurant Address: </p7>{{{ori}}}<br><br><br><p8 class="sum_text">Your Address: </p8>{{{dest}}}
+                <br><br>
+            </div>
+        </div>
+        <div id="hori_separator"></div>
+        <div id="tot_summary">
+            <p9 id="total_amt">Total: </p9><div id='total'></div>
+        </div>
+        <button id="confirm_order">Confirm</button>
+        <div id="weather_display">
+            Today's weather<br>
+            <img id="weather_icon">
+            <div id="explanation">
+               <br>{{{summary}}}<br><br>Temperature: {{{temp}}}<br>Humidity: {{{humid}}}<br>Wind speed: {{{winds}}}
+            </div>
+        </div>
+        <script>
+            var icon = `{{{icon}}}`;
+            var distance = `{{{dist}}}`;
+            var extra_fee = 0;
+
+            if (icon.indexOf('cloudy') != -1){
+                document.getElementById('weather_icon').src = 'https://d30y9cdsu7xlg0.cloudfront.net/png/204253-200.png';
+                extra_fee = 5;
+                document.getElementById('total').innerHTML = '$' + String(5 + extra_fee + {{{dist_fee}}})
+                document.getElementById('p6').innerHTML = extra_fee;
+            }else if(icon.indexOf('sun') != -1){
+                document.getElementById('weather_icon').src = 'https://image.flaticon.com/icons/svg/53/53565.svg';
+                document.getElementById('total').innerHTML = '$' + String(5 + extra_fee + {{{dist_fee}}})
+                document.getElementById('p6').innerHTML = extra_fee;
+            }else if(icon.indexOf('rainny') != -1){
+                document.getElementById('weather_icon').src = 'https://cdn3.iconfinder.com/data/icons/weather-58/50/rain-512.png';
+                extra_fee = 10
+                document.getElementById('total').innerHTML = '$' + String(5 + extra_fee + {{{dist_fee}}})
+                document.getElementById('p6').innerHTML = extra_fee;
+            }else if(icon.indexOf('clear') != -1){
+                document.getElementById('weather_icon').src = 'https://image.flaticon.com/icons/svg/53/53565.svg';
+                document.getElementById('total').innerHTML = '$' + String(5 + extra_fee + {{{dist_fee}}})
+                document.getElementById('p6').innerHTML = extra_fee;
+            }else{
+                document.getElementById('weather_icon').src = 'https://d30y9cdsu7xlg0.cloudfront.net/png/204253-200.png';
+                extra_fee  = 5;
+                document.getElementById('total').innerHTML = '$' + String(5 + extra_fee + {{{dist_fee}}})
+                document.getElementById('p6').innerHTML = extra_fee;
+            }
+            document.getElementById('confirm_order').addEventListener('click',()=>{
+                window.location="/confirm";
+            });
+
+        </script>
+    </body>
+</html>

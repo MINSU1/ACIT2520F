@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Main</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id='top_menu'>
+        <div id="logo"></div>
+        <button id="main" class="top_but">MAIN</button>
+        <button id="contact" class="top_but">Contact</button>
+        <button id="about" class="top_but">About Us</button>
+    </div>
+    <img id="background" src="./img/background.jpg">
+    <div id="main_display" class="displays">
+        <div id="no_address" style="display: none;">
+            <p1>Please enter your address to continue as a guest</p1>
+            <div id="address_div">
+                <p>Address Line</p>
+                <input type="text" id='address_input' class="guest_address" placeholder="Apt#/Street">
+                <p>City</p>
+                <input type="text" id='city_input' class="guest_address" placeholder="ex)Vancouver">
+                <p>Postal Code</p>
+                <input type="text" id='zip_input' class="guest_address" placeholder="ex)V6B 3H6">
+                <button type="submit" id="address_submit">Submit</button>
+            </div>
+            <p3>Or</p3>
+            <div id="login_div">
+                <p2>If you have an account, press login!</p2>
+                <img id="deliverypng" src="./img/scooter.png">
+                <button type="submit" id="login_submit">Login/Sign Up</button>
+            </div>
+        </div>
+        <div id="yes_address" style="display: none;">
+            <div id="user_info">
+                <img id="user_default" src="./img/user.png">
+                <div id="username_info">
+                    Username: {{{username}}}
+                </div>
+                <div id="address_info">
+                    Address: {{{address}}}
+                    <div id="left_sep" class="user_info_separator"></div>
+                    <p4>OR</p4>
+                    <div id="right_sep" class="user_info_separator"></div>
+                    <button id='re_address'>New Address</button>
+                </div>
+            </div>
+            
+        </div>
+        <button type="submit" id="next_submit" style="display:block;">Next</button>
+        <script>
+        if (`{{{validity}}}` == 0) {
+            document.getElementById("no_address").style.display = "block";
+            document.getElementById("yes_address").style.display = "none";
+            document.getElementById('next_submit').style.display = "none";
+        } else if (`{{{validity}}}` == 1) {
+            document.getElementById("no_address").style.display = "none";
+            document.getElementById("yes_address").style.display = "block";
+            document.getElementById('next_submit').style.display = "block";
+        }
+        </script>
+    </div>
+    <div id="contact_display" class="displays" style="display:none;">
+        <p5>CONTACT INFORMATION</p5>
+        <div id="separator" class="top_sep"></div>
+        <div id="map"></div>
+        <div id="info">
+            <h2>Contact</h2>
+            <br> Here at k2 we always look forward to hearing from you. What is your favourite food? Do you prefer Ramen noodles or Thai food ? Where is your favourite Italian restaurant? Do you like your steak rare, medium or well-done? Tell us what you like!
+            <br>
+            <br><a href="mailto:yeonjae.jay.kim@gmail.com">yeonjae.jay.kim@gmail.com</a>
+            <div id="separator" class="con_sep"></div>
+            <br>
+            <br>
+            <br>
+            <h2>RESTAURANT</h2>
+            <div id="separator" class="res_sep"></div>
+            <p>Would you like to become a k2 partner restaurant? Or are you already a partner of ours and have questions about the service? Then get in touch with us at:
+                <br>
+                <br>
+                <a href="mailto:yeonjae.jay.kim@gmail.com">yeonjae.jay.kim@gmail.com</a>
+                <br>
+            </p>
+            <br>
+        </div>
+    </div>
+    <div id="about_display" class="displays" style="display:none;">
+        <div id="about_header">
+            <h1>Visual ordering makes the devision-making process delightful and quick.</h1>
+        </div>
+        <div id="about_info">
+            <div id="about_left">
+                <h4>Our Mission</h4>
+                <h2>To provide the best digital food ordering experience</h2>
+            </div>
+            <div id="about_right">
+                <p7>
+                    2K is an online food marketplace featuring high quality photos founded in Vancouver BC, serving consumers, offices and local restaurants.
+                </p7><br>
+                <p7>
+                    2K goal is to offer an online food ordering experience that is second to none. Eating is a daily event for everyone. We believe it should be something enjoyable and fulfilling. 2K strives to be a convenient, easy, and reliable option for everyone who needs to order food on-demand or in advance.
+                </p7>
+            </div>
+            <img id="about_img" src="./img/about.jpg">
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOYA62OBwbkCp7SgiDlDYLCdJOIv1fySY&callback=initMap">
+    </script>
+</body>
+
+</html>

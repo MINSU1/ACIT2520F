@@ -1,0 +1,138 @@
+#background{
+    position: fixed;
+    width:100%;
+    height:100%;
+    left:0%;
+    background-size:cover;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.2;
+    filter: alpha(opacity=50);
+}
+#top_padding{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:80px;
+    background-color:rgb(0,0,0);
+}
+#logo{
+    position: absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    margin:auto;
+    width:100px;
+    height:70px;
+    background:url(./img/logo.jpg) no-repeat;
+    background-size:contain;
+}
+
+/*----------------------main display------------------------*/
+#display{
+    position:absolute;
+    left:300px;
+    top:100px;
+    width:800px;
+    height:auto;
+}
+
+#h1{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width:auto;
+    height:auto;
+    font:40px bold;
+    font-family:sans-serif;
+}
+.sum_text{
+    position: relative;
+    width:auto;
+    height:auto;
+    font-family:sans-serif;
+}
+
+#main_info{
+    position: absolute;
+    top:60px;
+    left:10px;
+    font:20px bold;
+}
+/*----------------------Side display------------------------*/
+#weather_display{
+    position:absolute;
+    left:50px;
+    top:120px;
+    width:170px;
+    height:290px;
+    margin:auto;
+    border:black 2px solid;
+    text-align: center;
+    font:20px bold;
+    font-family:sans-serif;
+}
+
+#weather_icon{
+    position: absolute;
+    left:0px;
+    right:0px;
+    top:30px;
+    margin:auto;
+    width:100px;
+    height:100px;
+    background-size: contain;
+}
+#explanation{
+    position: absolute;
+    left:10px;
+    top:120px;
+    font:20px bold;
+    font-family:sans-serif;
+}
+
+/*----------------------Bottom display------------------------*/
+#hori_separator{
+    position: absolute;
+    left:10px;
+    right:10px;
+    top:420px;
+    width:auto;
+    height:2px;
+    background-color:black;
+}
+#tot_summary{
+    position: absolute;
+    right:260px;
+    bottom:20px;
+    width:300px;
+    height:80px; 
+}
+#total_amt{
+    position: absolute;
+    left:0px;
+    font:60px bold;
+    font-family:sans-serif;
+}
+#total{
+    position: absolute;
+    right:10px;
+    bottom:5px;
+    font:70px bold;
+    font-family:sans-serif;
+}
+#confirm_order{
+    position: absolute;
+    right:20px;
+    bottom:30px;
+    width:200px;
+    height:70px;
+    font:40px bold;
+    font-family:sans-serif;
+    background-color:rgb(165,0,0);
+    color:white; 
+    cursor:pointer;
+    border-radius: 25px;
+}

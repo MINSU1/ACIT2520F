@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FindId</title>
+        <link href="findid.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="top_padding"></div>
+        <img id="background" src="img/background.jpg">
+        <div id="logo"></div>
+        <div id="display"><p>There is no way to find your Username or Password<br/>Too bad<br/>Just register once more<br/>Just don't eat</div>
+        <button id="goback">Ok...Let's go back</button>
+        
+        <script>
+
+        document.getElementById("goback").addEventListener("click",function(){
+            window.location ='/signin';
+            // document.location.href = "../views/register.html";
+
+        });
+        </script>
+    </body>
+</html>

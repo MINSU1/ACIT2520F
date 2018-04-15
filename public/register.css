@@ -1,0 +1,83 @@
+#background{
+    position: fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.2;
+    filter: alpha(opacity=50);
+}
+#display{
+    position: absolute;
+    height:auto;
+    width:400px;
+    left:0px;
+    right:0px;
+    top:20px;
+    margin: auto;
+    background: rgb(165, 0, 0, 0.1);
+    border-radius: 15px;
+    border:2px solid black;
+}
+#theHeader{
+    position: relative;
+    text-align: center;
+    font-size:25px;
+    margin: 15px;
+    font-family:sans-serif;
+}
+.questions{
+    width:100%;
+    margin:15px;
+    margin-right: 15px;
+    font-family:sans-serif;
+}
+p{
+    width:100%;
+    margin-bottom: 0px;
+}
+
+p1{
+    font-weight: bold;
+    width:100%;
+    margin-bottom: 0px;
+}
+
+#first{
+    width:150px;
+}
+#last{
+    width:150px;
+}
+#day{
+    width:100px;
+}
+#phone{
+    width:130px;
+}
+#year{
+    width:100px;
+}
+#city{
+    width:40%;
+}
+#zipcode{
+    width:40%;
+}
+#submit{
+    position: relative;
+    left:22%;
+    width:230px;
+    height:50px;
+    background-color:rgb(165,0,0,0.7);
+    border-radius: 15px;
+    cursor:pointer;
+    font-size:20px;
+    font-family:sans-serif;
+    font-weight: bold;
+    color:white;
+}

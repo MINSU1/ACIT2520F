@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Delivery</title>
+    <link href="location.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="top_padding"></div>
+    <img id="background" src="./img/background.jpg">
+    <div id='logo'></div>
+    <div id="map"></div>
+    <div id="explanation">
+        
+        <button id="submit" style='display: none;'>Confirm</button>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEoiFzG0XaPOHqYqQ6AGAcNBosbJQ7RUw&libraries=places&callback=initMap" async defer>
+    </script>
+    <script>
+    var map;
+    var infowindow,
+        website_link;
+
+    var latitu = {{{latitu}}},
+        longitu = {{{longitu}}};
+    
+    var place_address = '',
+        place_name = '',
+        place_rating = '',
+        place_type = '',
+        open_now = '',
+        isDivExist = 0;
+
+    var getAddress = (address, callback)=>{
+        request({
+            url:'https://maps.googleapis.com/maps/api/geocode/json'+'?address='+encodeURIComponent(address),
+            json: true
+        }, (error, response, body) => {
+            if (error) {
+                console.log('Can not connect to google maps');
+            } else if (body.status === 'ZERO_RESULTS') {
+                console.log('Can not find requested address');
+            } else if (body.status === 'OK') {
+                console.log(`Your requested venue: ${address}`);
+                console.log(`Address: ${body.results[0].formatted_address}`);
+                console.log(`Type: ${body.results[0].types[0]}`);
+            }
+        });
+    };
+
+    function initMap() {
+        var pyrmont = { lat: latitu, lng: longitu };
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: pyrmont,
+            zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+            location: pyrmont,
+            radius: 500,
+            type: ['restaurant']
+        }, callback);
+    }
+
+    function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+            }
+        }
+    }
+
+    function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            
+            place_address = place.vicinity,
+            place_name = place.name,
+            place_rating = place.rating,
+            place_type = String(place.types).split(",")[0],
+            open_now = place.opening_hours.open_now;
+
+            infowindow.setContent(place.name + "<br><br>" + `<button onclick="myFunction()">SELECT</button>`);
+            
+            // website_link = getAddress(place.name)
+            infowindow.open(map, this);
+            // addtodiv(place)
+        });
+    }
+    function isItOpen(par){
+        if (par) {
+            return 'open';
+        }else{
+            return 'closed';
+        }
+    }
+    function myFunction() {
+        if (isDivExist != 0){
+                document.getElementById('order_div').innerHTML = place_name;   
+                document.getElementById('rating_div').innerHTML = "Rating: "+place_rating; 
+                document.getElementById('add_div').innerHTML = "Address: "+place_address;
+                document.getElementById('type_div').innerHTML = "Type: "+place_type;    
+                document.getElementById('open_div').innerHTML = "Open/Closed: "+isItOpen(open_now);       
+        }else{
+            var nameDiv = document.createElement("div"),
+                ratingDiv = document.createElement("div"),
+                addDiv = document.createElement("div"),
+                typeDiv= document.createElement("div"),
+                openDiv= document.createElement("div");
+
+            nameDiv.id = 'order_div';
+            ratingDiv.id = "rating_div";
+            addDiv.id = "add_div";
+            typeDiv.id = "type_div";
+            openDiv.id = "open_div";
+            // nameDiv.innerHTML = place_name + '<br>' +place_rating+ '<br>' +place_address+ '<br>' +place_type+ '<br>' +price_level+ '<br>' +open_now;
+            nameDiv.innerHTML = place_name;          
+            ratingDiv.innerHTML = "Rating: "+place_rating;       
+            addDiv.innerHTML = "Address: "+place_address;      
+            typeDiv.innerHTML = "Type: "+place_type;          
+            openDiv.innerHTML = "Open/Closed: "+isItOpen(open_now);        
+
+            ratingDiv.style.font = "20px sans-serif";
+            addDiv.style.font = "20px sans-serif";
+            typeDiv.style.font = "20px sans-serif";
+            openDiv.style.font = "20px sans-serif";
+
+            document.getElementById('explanation').appendChild(nameDiv);
+            document.getElementById('explanation').appendChild(ratingDiv);
+            document.getElementById('explanation').appendChild(addDiv);
+            document.getElementById('explanation').appendChild(typeDiv);
+            document.getElementById('explanation').appendChild(openDiv);
+            document.getElementById('submit').style.display = 'block';
+            isDivExist = 1;
+        }
+        
+    }
+
+    function addtodiv(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+        });
+
+        var newDiv = document.createElement("div");
+        // newDiv.className = 'theNewDiv'
+        var newContent = document.createTextNode(place.name);
+        newDiv.appendChild(newContent);
+        document.getElementById('explanation').appendChild(newDiv);
+    }
+
+    function location_confirmation(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST", "/location_confirmation", true);
+        xmlhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
+        xmlhttp.onreadystatechange = () => {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                window.location="/weather";
+            }
+        }
+        xmlhttp.send(`address=${place_address}`);
+    }
+
+    //-------------------------------------interactions---------------------------------
+    document.getElementById('submit').addEventListener('click',()=>{
+        location_confirmation();
+    });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+#background{
+    position: fixed;
+    width:100%;
+    height:100%;
+    left:0%;
+    background-size:cover;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.2;
+    filter: alpha(opacity=50);
+}
+
+/*-----------------------Top-----------------------------*/
+#top_menu{
+	position: fixed;
+	z-index: 1;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:70px;
+    background-color:rgb(0,0,0);
+}
+
+#logo{
+    position: absolute;
+    top:5px;
+    left:30px;
+    width:90px;
+    height:70px;
+    background:url(./img/logo.jpg) no-repeat;
+    background-size: contain;
+}
+.top_but{
+	position:absolute;
+	width:130px;
+	top:0px;
+	bottom:0px;
+	margin:auto;
+	height:40px;
+	border:none;
+	background:black;
+	cursor:pointer;
+	font-size: 22px;
+    color:white;
+    font-family: Sans-serif;
+}
+#main{
+	right:400px;
+	margin:auto;
+}
+#contact{
+	right:220px;
+}
+
+#about{
+	right:80px;
+}
+/*---------------------------Displays-----------------------------------------*/
+.displays{
+	position: absolute;
+	top:70px;
+	left:0px;
+	width:100%;
+    height:50%;
+}
+/*-------------------------Main Display-------------------------------------*/
+#yes_address{
+    position:absolute;
+    top:10%;
+    left:5%;
+    right:5%;
+    height: auto;
+    width:90%;
+    border:rgb(165,0,0) 2px solid;
+}
+#user_info{
+    position: absolute;
+    left:30%;
+}
+
+#user_default{
+    position:absolute;
+    top:30px;
+    left:-300px;
+    width:250px;
+    height:250px;
+}
+
+#username_info{
+    position: absolute;
+    top:50px;
+    margin:auto;
+    width:300px;
+    height:40px;
+    border-radius: 20px;
+    font-size:25px;
+    text-align:center;
+    font-family: Sans-serif;
+    border:rgb(0,208,0) 2px solid;
+    color:black;
+    padding-top:10px; 
+}
+#address_info{
+    position: absolute;
+    top:120px;
+    margin:auto;
+    width:650px;
+    height:160px;
+    border-radius: 20px;
+    font-size:25px;
+    text-align:center;
+    font-family: Sans-serif;
+    border:rgb(0,208,0) 2px solid;
+    color:black;
+    padding-top:10px; 
+}
+#re_address{
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:7%;
+    margin:auto;
+    width:50%;
+    height:30%;
+    background-color:rgb(165,0,0,0.8);
+    font:20px bold;
+    border-radius:15px;
+    color:white;
+    text-align:center;
+    font-family: Sans-serif;
+    cursor:pointer;
+}
+.user_info_separator{
+    position: absolute;
+    top:41%;
+    width:40%;
+    height:2%;
+    background-color:black;
+}
+#left_sep{
+    position: absolute;
+    left:5%;
+}
+#right_sep{
+    position: absolute;
+    right:5%;
+}
+p4{
+    position: absolute;
+    top:30%;
+    left:46%;
+    font-family: Monospace;
+    font: 35px bold;
+}
+p{
+    position: relative;
+    margin:auto;
+    top:3%;
+    left:10px;
+}
+p1{
+	position: absolute;
+	left:10%;
+	top:15px;
+	font-weight: bold;
+	font-size: 19px;
+    font-family: Sans-serif;
+}
+#address_div{
+	position: absolute;
+	top:50px;
+	left:90px;
+	margin:auto;
+	width:500px;
+	height:400px;
+	background: white;
+    border:2px solid black;
+    border-radius: 25px;
+}
+.guest_address{
+	position: relative;
+	top:7px;
+	left:10px;
+	width:450px;
+	height:40px;
+	font-size: 25px;
+    margin:10px;
+}
+#address_submit{
+	position: absolute;
+	bottom:7%;
+	height:50px;
+	width:400px;
+	left:10%;
+	border:none;
+	background:rgb(165,0,0);
+	color:white;
+	font-weight: bold;
+	cursor:pointer;
+    font-size:22px;
+    border-radius: 25px;
+}
+#login_div{
+    position: absolute;
+    top:50px;
+    right:90px;
+    margin:auto;
+    width:380px;
+    height:400px;
+    background: white;
+    border:2px solid black;
+    border-radius: 25px;
+}
+p2{
+    position: absolute;
+    left:6%;
+    top:-9%;
+    margin:auto;
+    font-weight: bold;
+    font-size: 19px;
+    font-family: Sans-serif;
+}
+p3{
+    position: fixed;
+    left:53%;
+    top:50%;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Sans-serif;
+}
+
+#login_submit{
+    position: absolute;
+    bottom:7%;
+    height:50px;
+    width:90%;
+    left:5%;
+    border:none;
+    background:rgb(165,0,0);
+    color:white;
+    font-weight: bold;
+    cursor:pointer;
+    font-size:22px;
+    border-radius: 25px;
+}
+#deliverypng{
+    position: absolute;
+    width:60%;
+    left:18%;
+    top:5%;
+}
+#next_submit{
+    position: absolute;
+    border:none;
+    bottom:-150px;
+    left:42%;
+    width:210px;
+    height:40px;
+    font-size: 20px;
+    background-color:rgb(165,0,0);
+    font-family: Sans-serif;
+    color:white;
+    cursor:pointer;
+}
+/*-------------------------Contact Display-------------------------------------*/
+p5{
+    position: absolute;
+    left:32%;
+    top:30px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: Sans-serif;
+}
+#map{
+    position: absolute;
+    left:100px;
+    top:120px;
+    width:500px;
+    height:450px;
+}
+#info{ 
+    position: absolute;
+    left:700px;
+    top:100px;
+    margin:auto;
+    width:400px;
+    height:auto;
+    font-family: Sans-serif;
+}
+
+#separator{
+    position: absolute;
+    width:100%;
+    height:0.3%;
+    background-color:rgb(165,0,0);
+}
+
+.top_sep{
+    top:100px;
+}
+
+.con_sep{
+    top:90px;
+}
+
+.res_sep{
+    top:390px;
+}
+/*-------------------------About Display-------------------------------------*/
+#about_header{
+    position: absolute;
+    left:0px;
+    right:0px;
+    margin:auto;
+    width:600px;
+    height:auto;
+}
+#about_info{
+    position: absolute;
+    left:0px;
+    right:0px;
+    top:150px;
+    margin:auto;
+    width:700px;
+    height:650px;
+    border-top: rgb(165,0,0) 2px solid
+}
+#about_left{
+    width:40%;
+    height:100%;
+}
+#about_right{
+    position: absolute;
+    left: 400px;
+    width:40%;
+    height:100%;
+    top:0px;
+}
+h4{
+    left:20%;
+    font-size:20px;
+    font-family: Sans-serif;
+}
+h2{
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Sans-serif;
+}
+h1{
+    font-family: Sans-serif;
+}
+#about_img{
+    position: absolute;
+    width:100%;
+    top:300px;
+    height:auto;
+}
+
+p7{
+    position: relative;
+    margin:auto;
+    top:3%;
+    font-family: Sans-serif;
+}
