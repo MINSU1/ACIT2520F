@@ -4,6 +4,8 @@ const fs = require('fs');
 
 var app = express();
 
+const port = process.env.PORT || 8080;
+
 hbs.registerPartials(__dirname + '/views/partials');
 
 hbs.registerHelper('getCurrentYear',()=>{
@@ -53,6 +55,6 @@ app.get('/404', (request,response) => {
 	});
 });
 
-app.listen(8080, () => {
+app.listen(port, () => {
 	console.log('Server is on 8080');
 });
