@@ -30,13 +30,12 @@ app.use((request, response, next)=>{
 });
 
 app.get('/', (request, response) => {
-	response.send({
-		name: 'MINSU',
-		school: [
-		'BCIT',
-		'SFU'
-		]
-	})
+	response.render('about.hbs',{
+		title: 'About Page',
+		year: new Date().getFullYear(),
+		welcome:'Hello'
+		// image: 'Capture.PNG'
+	});
 });
 
 app.get('/info', (request,response) => {
