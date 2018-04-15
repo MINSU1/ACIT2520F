@@ -17,17 +17,17 @@ hbs.registerHelper('message', (text)=>{
 app.set('view engine','hbs');
 app.use(express.static(__dirname + '/public'));
 
-app.use((request, response, next)=>{
-	var time = new Date().toString();
-	// console.log(`${time}: ${request.method} ${request.url}`);
-	var log = `${time}: ${request.method} ${request.url}`;
-	fs.appendFile('server.log', log + '\n', (error) => {
-		if (error){
-			console.log("Unable to log messages");
-		}
-	});
-	next();
-});
+// app.use((request, response, next)=>{
+// 	var time = new Date().toString();
+// 	// console.log(`${time}: ${request.method} ${request.url}`);
+// 	var log = `${time}: ${request.method} ${request.url}`;
+// 	fs.appendFile('server.log', log + '\n', (error) => {
+// 		if (error){
+// 			console.log("Unable to log messages");
+// 		}
+// 	});
+// 	next();
+// });
 
 app.get('/', (request, response) => {
 	response.render('about.hbs',{
