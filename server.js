@@ -71,7 +71,7 @@ app.get('/',(request, response) =>{
 	})
 });
 
-app.get('/info',(request,response)=> {
+app.get('/',(request,response)=> {
 	response.render('about.hbs',{
 		title: 'About page',
 		year: new Date().getFullYear(),
