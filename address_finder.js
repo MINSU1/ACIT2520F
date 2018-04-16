@@ -7,10 +7,8 @@ var getWeather = (lat, lng, callback) => {
 	}, (error, response, body) => {
 		if (error){
 			callback('Cannot connect to Darksky.net');
-			//console.log('Cannot connnect to Google Maps');
 		}else if(body.code == 400){
 			callback('Cannot find weather form the address');
-			//console.log('Cannot find requested address');
 		}else{
 			callback(undefined, {
 				icon: `icon: ${body.currently.icon}`,
@@ -40,7 +38,28 @@ var getAddress = (address, callback) => {
 		}
 	});
 };
+
+var getpic = (input, callback) =>{
+	var URL = "https://pixabay.com/api/?key=8709818-dabc1eee988fc07d7dac28d29"+"&q="+encodeURIComponent("red roses");
+	request({
+		url: URL,
+		json: true
+	},(error,response,body) => {
+		if (error){
+			callback('Cannot connect to Pic');
+		}else if (body.status == 'ZERO_RESULTS'){
+			callback('Cannot find Pic');
+		}else if (body.status == 'OK'){
+			callback(undefined, {
+				largepicurl: hits[0].largeImageURL,
+				pageurl: hits[0].pageURL,
+				webformaturl: hits[0].webformatURL
+			})
+		}
+	})
+}
 module.exports = {
 	getWeather,
-	getAddress
+	getAddress,
+	getpic
 };

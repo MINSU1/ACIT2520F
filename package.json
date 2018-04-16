@@ -1,27 +1,15 @@
 {
-  "name": "acit2520f",
+  "name": "pr",
   "version": "1.0.0",
-  "description": "\"# ACIT2520F\"",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MINSU1/ACIT2520F.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MINSU1/ACIT2520F/issues"
-  },
-  "homepage": "https://github.com/MINSU1/ACIT2520F#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
     "express": "^4.16.3",
-    "fs": "0.0.1-security",
-    "hbs": "^4.0.1",
     "request": "^2.85.0"
   }
 }

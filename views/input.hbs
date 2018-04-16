@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>{{title}}</title>
+</head>
+
+<body>
+	<p>{{welcome}}</p>
+	<img id="firstpic" src={{imgsrc}}>
+	<img id="firstpic" src={{webformaturl3}}>
+	<div id="explanation">
+		<input type="text" id='zip_input' class="guest_address" placeholder="Input">
+		<button id="submit">SUBMIT</button>
+	</div>
+	<img id="secondpic" style="display:none;">
+<!-- 	<script>
+		var address = ''
+		document.getElementById("submit").addEventListener("click",()=>{
+		    address = String(document.getElementById('zip_input').value)
+		    console.log(address);
+		});
+		var API_KEY = '8709818-dabc1eee988fc07d7dac28d29';
+		var URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent("red roses");
+		$.getJSON(URL, function(data){
+		    if (parseInt(data.totalHits) > 0)
+		        $.each(data.hits, function(i, hit){ console.log(hit.pageURL); });
+		    else
+		        console.log('No hits');
+		    });
+		console.log(key_word);
+		document.getElementById("submit").addEventListener("click",()=>{
+		    var key_word = String(document.getElementById('zip_input').value);
+		    console.log(key_word);
+		});
+	</script> -->
+</body>
+<script src="input.js"></script>
+</html>
