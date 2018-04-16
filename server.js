@@ -60,16 +60,16 @@ function get_pic_url(address){
 	});
 }
 
-app.get('/',(request, response) =>{
-	response.send({
-		name: 'MIN',
-		school :[
-		'BCIT',
-		'SFU',
-		'UBC'
-		]
-	})
-});
+// app.get('/',(request, response) =>{
+// 	response.send({
+// 		name: 'MIN',
+// 		school :[
+// 		'BCIT',
+// 		'SFU',
+// 		'UBC'
+// 		]
+// 	})
+// });
 
 app.get('/',(request,response)=> {
 	response.render('about.hbs',{
